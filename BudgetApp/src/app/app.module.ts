@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,21 @@ import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './error/error.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './ProductDetails/user.service';
+
+
+const appRoutes: Routes= [
+  {path:'', component: HomePageComponent},
+  {path:'notFound', component: ErrorComponent},
+  {path:'products', component: ProductsComponent},
+  {path:'dashboard', component: DashboardComponent},
+  {path:'cart', component: CartComponent},
+  {path:'home', component: HomePageComponent},
+  {path: '**', redirectTo: '/notFound'}
+];
 
 @NgModule({
   declarations: [
@@ -18,13 +34,17 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     CartComponent,
     ProductsComponent,
     AdminLoginComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

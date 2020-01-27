@@ -1,1 +1,42 @@
-<p>products works!</p>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+
+    <title>products</title>
+</head>
+
+<body>
+
+    <h2>Products</h2>
+    <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">SRP(PhP)</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let d of data">
+                <td >{{ d.id }}</td>
+                <td >{{ d.name }}</td>
+                <td ><input type="number" placeholder="Qty" #box (keyup)="onKey(box.value)"/></td>
+                <td  >{{ d.price }}</td>
+                <td><button (click) ="addCart(d)">Add to Cart</button></td>
+            </tbody>
+        </table>
+        
+    </div>
+
+   
+</body>
+</html>
+<app-cart  [parentdata]='dataToCart' ></app-cart>
