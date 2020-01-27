@@ -20,9 +20,12 @@ export class ProductsComponent implements OnInit {
 
   dataToCart : Array<any>=[];
   qty = '';
+  sub:number;
+
   newData: any;
 
-  constructor() {    this.newData = new Details;
+  constructor() {    
+    this.newData = new Details;
   }
 
   ngOnInit() {
@@ -30,8 +33,6 @@ export class ProductsComponent implements OnInit {
 
   onKey(value: string){
     this.qty = value
-    console.log( this.qty );
-    
   }
 
   addCart(d:any){
@@ -42,9 +43,14 @@ export class ProductsComponent implements OnInit {
     this.newData.price= d.price;
 
     this.newData.qty= parseInt(this.qty);
+    this.newData.sub = d.price * parseInt(this.qty);
+
     this.dataToCart.push(this.newData)
-    console.log(this.newData);
+
+    console.log(this.dataToCart);
+
     
   }
+
 
 }

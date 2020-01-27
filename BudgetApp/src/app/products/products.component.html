@@ -26,17 +26,19 @@
                 </tr>
             </thead>
             <tbody *ngFor="let d of data">
-                <td >{{ d.id }}</td>
-                <td >{{ d.name }}</td>
-                <td ><input type="number" placeholder="Qty" #box (keyup)="onKey(box.value)"/></td>
-                <td  >{{ d.price }}</td>
-                <td><button (click) ="addCart(d)">Add to Cart</button></td>
+                <td>{{ d.id }}</td>
+                <td>{{ d.name }}</td>
+                <td>
+                    <input type="number" placeholder="Qty" #box (keyup)="onKey(box.value)" />
+                </td>
+                <td>{{ d.price }}</td>
+                <td><button type="submit" (click)="addCart(d)">Add to Cart</button></td>
             </tbody>
         </table>
-        
     </div>
 
-   
+
 </body>
+
 </html>
-<app-cart  [parentdata]='dataToCart' ></app-cart>
+<app-cart [parentdata]='dataToCart'></app-cart>

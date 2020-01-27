@@ -30,11 +30,19 @@
                     <td>{{d.name}}</td>
                     <td>{{d.qty}}</td>
                     <td>{{d.price}}</td>
-                    <td></td>
+                    <td>{{d.sub}}</td>
                 </tbody>
+
+                <thead class="thead-light">
+                        <tr>
+                            <th scope="col"><button (click) ="onTotal()">Total</button></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col" *ngIf="totalled">{{totals}}</th>
+                        </tr>
+                    </thead>
+                
             </table>
-
-
     </div>
 
 </body>
