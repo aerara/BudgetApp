@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AdminLoginComponent implements OnInit {
   public userName="Admin"
-  public userPass="@dm1n"
+  public userPass="Admin"
   public userInput : string;
   public passInput : string;
 

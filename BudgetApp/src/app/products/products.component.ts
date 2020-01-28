@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Details } from '../ProductDetails/Details';
-import { Data } from '../ProductDetails/productsList';
+import { UserService } from '../ProductDetails/user.service';
 
 
 @Component({
@@ -11,21 +11,20 @@ import { Data } from '../ProductDetails/productsList';
 })
 
 export class ProductsComponent implements OnInit {
-  public data = Data;
-
+  public dataModel: Details[] = []
   dataToCart : Array<any>=[];
   qty = '';
   sub:number;
   searchText;
 
-
   newData: any;
 
-  constructor() {    
+  constructor(private dataService: UserService) {    
     this.newData = new Details;
   }
 
   ngOnInit() {
+    return this.dataService.getUsers().subscribe(data =>(this.dataModel = data))
   }
 
   onKey(value: string){

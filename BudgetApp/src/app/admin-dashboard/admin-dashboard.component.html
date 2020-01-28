@@ -6,9 +6,44 @@
     crossorigin="anonymous">
 
 <body>
-    <div class="row">
-        
-    </div>
-</body>
+    <form (ngSubmit)="sampleForm.reset()" #sampleForm="ngForm" >
+        <div class="card" id="newProduct">
+            <h3>Add New Product</h3>
+            <hr>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Product Name:</label>
+                <input type="text" [(ngModel)]="productDetail.name" class="form-control" name="pname" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">SRP(PhP):</label>
+                <input type="number" [(ngModel)]="productDetail.price" name="prname" class="form-control" placeholder="Price">
+            </div>
 
-<app-dashboard></app-dashboard>
+            <button type="submit" class="btn btn-primary" (click)="addProduct()">{{status}}</button>
+        </div>
+    </form>
+
+    <div class="card" id="adminTbl">
+        <table class="table table-hover">
+            <thead>
+                <tr >
+                    <th scope="col">ID</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">SRP(PhP)</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let d of dataModel | filter:searchText">
+                <td>{{ d.id }}</td>
+                <td>{{ d.name }}</td>
+                <td>{{ d.price }}</td>
+                <td>
+                    <button type="submit" (click)="onEdit(d)" class="btn btn-info">Edit</button>
+                    <button type="submit" (click)="onDelete(d)"class="btn btn-danger">Delete</button>
+                </td>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>

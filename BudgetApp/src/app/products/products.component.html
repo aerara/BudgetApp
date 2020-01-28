@@ -20,7 +20,7 @@
                     <th scope="col">Action</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let d of data | filter:searchText">
+            <tbody *ngFor="let d of dataModel | filter:searchText">
                     
                 <td>{{ d.id }}</td>
                 <td>{{ d.name }}</td>

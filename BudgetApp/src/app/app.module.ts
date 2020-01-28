@@ -24,6 +24,7 @@ const appRoutes: Routes= [
   {path:'notFound', component: ErrorComponent},
   {path:'admin', component: AdminLoginComponent},
   {path:'admin/dashboard', component: AdminDashboardComponent},
+  {path:'admin/dashboard/:id', component: AdminDashboardComponent},
   {path:'products', component: ProductsComponent},
   {path:'dashboard', component: DashboardComponent},
   {path:'cart', component: CartComponent},
