@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    <!-- <h1>Welcome Admin</h1> -->
+    <div class="content">
+        <div class="card">
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()" #sampleForm="ngForm">
+                    <!-- <img src="https://www.logolynx.com/images/logolynx/03/039b004617d1ef43cf1769aae45d6ea2.png" class="logo"> -->
+                    <label>
+                        <h2>Welcome Admin</h2>
+                    </label>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Username:</label>
+                        <input type="text" class="form-control" [(ngModel)]="userInput" name="uName" placeholder="Username"
+                            #uName="ngModel" required>
+                    </div>
+                    <div *ngIf="uName.invalid && (uName.dirty || uName.touched)">
+                        <div *ngIf="uName.errors.required" class="alert alert-danger" role="alert">
+                            Username is required!
+                        </div>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Password:</label>
+                        <input type="password" class="form-control" [(ngModel)]="passInput" name="pWord" #pWord="ngModel"
+                            placeholder="********" required>
+                    </div>
+                    <div *ngIf="pWord.invalid && (pWord.dirty || pWord.touched)">
+                        <div *ngIf="pWord.errors.required" class="alert alert-danger" role="alert">
+                            Username is required!
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-end">
+                        <!-- routerLink='/dashboard' -->
+                        <button class="btn btn-success" type="submit" [disabled]="!sampleForm.form.valid">Login</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

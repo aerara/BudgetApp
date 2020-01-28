@@ -14,7 +14,7 @@
     width:40%;
 }
 
-button[type=button] {
+button{
     width: 100%;
     background-color: rgb(26, 236, 33);
     color: white;
@@ -25,7 +25,7 @@ button[type=button] {
     cursor: pointer;
 }
 
-button[type=button]:hover {
+button:hover {
     background-color: #45a049;
     
 }
