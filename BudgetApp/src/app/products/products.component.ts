@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Details } from '../ProductDetails/Details'
+import { Details } from '../ProductDetails/Details';
+import { Data } from '../ProductDetails/productsList';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -7,16 +9,7 @@ import { Details } from '../ProductDetails/Details'
 })
 
 export class ProductsComponent implements OnInit {
-  data: Details[] = [
-    { id : 1, name: "Downy", price: 6},
-    { id : 2, name: "Safeguard", price: 20},
-    { id : 3, name: "Surf", price: 7},
-    { id : 4, name: "Del", price: 8},
-    { id : 5, name: "Silka", price: 20},
-    { id : 6, name: "Modess w/ Wings", price: 50},
-    { id : 7, name: "Corned Beef", price: 28},
-    { id : 8, name: "Sardines", price: 18},
-  ];
+  public data = Data;
 
   dataToCart : Array<any>=[];
   qty = '';
@@ -48,8 +41,6 @@ export class ProductsComponent implements OnInit {
     this.dataToCart.push(this.newData)
 
     console.log(this.dataToCart);
-
-    
   }
 
 

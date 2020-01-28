@@ -47,4 +47,5 @@ const appRoutes: Routes= [
   providers: [UserService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
