@@ -6,9 +6,32 @@ body{
     
     }
 
+
+    #templateSection{
+        padding:30px;
+        width:60%;
+        text-align: right; 
+        margin: 1%;
+    }
+    
+    h1{
+        font-size: 80px;
+        color: rgb(61, 53, 43);
+        text-align: right;
+        font-weight: bold;
+        font-family: 'Libre Baskerville', serif;
+    
+    }
+    
+    .w3-container #templateSection{
+        display: inline-block;
+    }
+
 .container{
 height: 100%;
 align-content: center;
+margin-left: 35%;
+margin-top: -32%;
 }
 
 .card{
