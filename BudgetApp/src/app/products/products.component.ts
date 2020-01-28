@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Details } from '../ProductDetails/Details';
 import { Data } from '../ProductDetails/productsList';
 
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -17,7 +16,7 @@ export class ProductsComponent implements OnInit {
   qty = '';
   sub:number;
   searchText;
-
+  buttonDisabled = true;
 
   newData: any;
 
@@ -30,6 +29,11 @@ export class ProductsComponent implements OnInit {
 
   onKey(value: string){
     this.qty = value
+    if(this.qty == null){
+      this.buttonDisabled = true;
+    } else {
+      this.buttonDisabled = false;
+    }
   }
 
   addCart(d:any){
@@ -41,9 +45,9 @@ export class ProductsComponent implements OnInit {
 
     this.newData.qty= parseInt(this.qty);
     this.newData.sub = d.price * parseInt(this.qty);
-
+    
     this.dataToCart.push(this.newData)
-
+    this.buttonDisabled = true;
     console.log(this.dataToCart);
   }
 

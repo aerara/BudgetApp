@@ -30,7 +30,13 @@ export class CartComponent implements OnInit {
     this.totalled = true;
   }
 
-  
+  remove(dataToDelete) {
+    for (var i = 0; i < this.parentdata.length; i++) {
+      if (dataToDelete == this.parentdata[i]) {
+        this.parentdata.splice(i, 1);
+      }
+    }
+  }
 
 }
 

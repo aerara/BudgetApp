@@ -4,10 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
         crossorigin="anonymous">
-
     <title>Cart</title>
 </head>
 
@@ -15,34 +13,33 @@
     <div class="container">
         <h2>My Cart</h2>
         <table class="table">
-                <thead >
-                    <tr class="table-warning"> 
-                        <th scope="col">Product</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">SRP(PhP)</th>
-                        <th scope="col">Subtotal</th>
-                        
-                    </tr>
-                </thead>
-                <tbody *ngFor="let d of parentdata">
-                    <td>{{d.name}}</td>
-                    <td>{{d.qty}}</td>
-                    <td>{{d.price}}</td>
-                    <td>{{d.sub}}</td>
-                </tbody>
-
-                <thead class="thead-light">
-                        <tr>
-                            <th scope="col"><button (click) ="onTotal()">Total</button></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col" *ngIf="totalled">{{totals}}</th>
-                        </tr>
-                    </thead>
-                
-            </table>
+            <thead>
+                <tr class="table-warning">
+                    <th></th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">SRP(PhP)</th>
+                    <th scope="col">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let d of parentdata">
+                <td scope="col"><button id="del" (click)="remove(d)">X</button></td>
+                <td>{{d.name}}</td>
+                <td>{{d.qty}}</td>
+                <td>{{d.price}}</td>
+                <td>{{d.sub}}</td>
+            </tbody>
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col"><button (click)="onTotal()">Total</button></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col" *ngIf="totalled">{{totals}}</th>
+                </tr>
+            </thead>
+        </table>
     </div>
-
 </body>
 
 </html>
