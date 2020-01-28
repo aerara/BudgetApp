@@ -1,23 +1,16 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-        crossorigin="anonymous">
-
-    <title>products</title>
-</head>
 
 <body>
+    <nav class="navbar fixed-top navbar-light" style="background-color: #a1a15e;">
+        <img class="logo" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/currency-peso-1685062-1430911.png">
+        <a id="name"class="navbar-brand" href="#">Budget Buddy</a>
+    </nav>
+    <label>Search: </label>
+    <input id="search" class="form-control mr-sm-2" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"/>
 
-    <h2>Products</h2>
     <div class="container">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
+        <table class="table table-sm">
+            <thead>
+                <tr class="table-dark">
                     <th scope="col">ID</th>
                     <th scope="col">Product</th>
                     <th scope="col">Quantity</th>
@@ -25,20 +18,19 @@
                     <th scope="col">Action</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let d of data">
+            <tbody *ngFor="let d of data | filter:searchText">
                 <td>{{ d.id }}</td>
                 <td>{{ d.name }}</td>
                 <td>
-                    <input type="number" placeholder="Qty" #box (keyup)="onKey(box.value)" />
+                    <input type="number" placeholder="Qty" #box (keyup)="onKey(box.value)" class="form-control" id="btnQty" />
                 </td>
                 <td>{{ d.price }}</td>
-                <td><button type="submit" (click)="addCart(d)">Add to Cart</button></td>
+                <td><button type="submit" (click)="addCart(d)" class="btn btn-warning"> Add to Cart</button></td>
             </tbody>
         </table>
     </div>
 
 
-</body>
+    <app-cart [parentdata]='dataToCart'></app-cart>
 
-</html>
-<app-cart [parentdata]='dataToCart'></app-cart>
+</body>

@@ -1,24 +1,19 @@
 .container{
-    float: right;
-    position: relative;
-    top: -315px;
-    right: -570px;
+    /* float: right;
+    width: 30%;
+    margin-top: -500px;
     border-radius: 1px;
     background-color: #f2f2f2;
 	background: #FAFAFA;
 	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
 	border-radius: 10px;
-    border: 6px solid #305A72;
+    border: 6px solid #305A72; */
 }
 .table{
-    width:40%;
+    width:30%;
 }
 
-<<<<<<< HEAD
 button {
-=======
-button{
->>>>>>> a078dfaa026d0392f5f41fe1f03d4542019ea8be
     width: 100%;
     background-color: rgb(71, 158, 73);
     color: white;
@@ -30,10 +25,6 @@ button{
 }
 
 button:hover {
-<<<<<<< HEAD
     background-color: #305f32;
-=======
-    background-color: #45a049;
->>>>>>> a078dfaa026d0392f5f41fe1f03d4542019ea8be
     
 }

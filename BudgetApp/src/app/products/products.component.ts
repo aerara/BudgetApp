@@ -2,10 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Details } from '../ProductDetails/Details';
 import { Data } from '../ProductDetails/productsList';
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
+
 })
 
 export class ProductsComponent implements OnInit {
@@ -14,6 +16,8 @@ export class ProductsComponent implements OnInit {
   dataToCart : Array<any>=[];
   qty = '';
   sub:number;
+  searchText;
+
 
   newData: any;
 
@@ -42,6 +46,5 @@ export class ProductsComponent implements OnInit {
 
     console.log(this.dataToCart);
   }
-
 
 }
