@@ -25,10 +25,7 @@
                 <td>{{ d.id }}</td>
                 <td>{{ d.name }}</td>
                 <td>
-                    
-                        <input type="number" placeholder="Qty" #box (keyup)="onKey(box.value)" class="form-control" id="btnQty"
-                            required />
-                    
+                    <input type="number" placeholder="Qty" #box (keyup)="onKey(box.value)" class="form-control" id="btnQty"required />
                 </td>
                 <td>{{ d.price }}</td>
                 <td><button type="submit" (click)="addCart(d)">
