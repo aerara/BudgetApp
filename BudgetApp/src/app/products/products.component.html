@@ -1,17 +1,18 @@
 <body>
-    <nav class="navbar fixed-top navbar-light" style="background-color: #a1a15e;">
+    <nav class="navbar fixed-top navbar-light" style="background-color: #fafae9;">
         <img class="logo" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/currency-peso-1685062-1430911.png">
         <a id="name" class="navbar-brand" href="#">Budget Buddy</a>
     </nav>
+
     <div class="searchDiv">
         <label>Search: </label>
         <input id="search" class="form-control mr-sm-2" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" />
     </div>
-    
+
     <div class="container">
-        <table class="table table-sm">
+        <table class="table table-striped table-bordered">
             <thead>
-                <tr class="table-dark">
+                <tr class="table-warning">
                     <th scope="col">ID</th>
                     <th scope="col">Product</th>
                     <th scope="col">Quantity</th>
@@ -20,18 +21,28 @@
                 </tr>
             </thead>
             <tbody *ngFor="let d of data | filter:searchText">
+                    
                 <td>{{ d.id }}</td>
                 <td>{{ d.name }}</td>
                 <td>
-                    <input type="number" placeholder="Qty" #box (keyup)="onKey(box.value)" class="form-control" id="btnQty" />
+                    
+                        <input type="number" placeholder="Qty" #box (keyup)="onKey(box.value)" class="form-control" id="btnQty"
+                            required />
+                    
                 </td>
                 <td>{{ d.price }}</td>
-                <td><button type="submit" (click)="addCart(d)" class="btn btn-warning"> Add to Cart</button></td>
+                <td><button type="submit" (click)="addCart(d)">
+                        Add to Cart</button></td>
+                   
             </tbody>
         </table>
     </div>
 
+    <div class="card">
+        <div class="card-body">
+            <app-cart [parentdata]='dataToCart'></app-cart>
+        </div>
+    </div>
 
-    <app-cart [parentdata]='dataToCart'></app-cart>
 
 </body>

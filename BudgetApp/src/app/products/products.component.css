@@ -1,18 +1,33 @@
+/* body{
+    background-image: url("http://medz.it/wp-content/uploads/2016/12/vista-annebbiata.jpg");
+    background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+} */
+table{
+    width: 60%;
+    margin-left: -4%;
+}
 #btnQty{
     width: 90px;
     height: 30px;
     text-align: center;
 }
-
+label{
+    margin-left: 6%;
+    font-weight:bold;
+}
 input[type=text]{
-    width: 57%;
+    width: 44%;
     margin-left: 1%;
+    margin-bottom: 1%;
     padding: 12px 20px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 #search{
     margin-top: 10%;
 }
@@ -32,4 +47,11 @@ nav{
 .logo{
     width: 80px;
     height: 80px;
+}
+.card{
+    width: 35%;
+    float:right;
+    margin-right: 6%;
+    margin-top:-1420px;
+    padding: 2px;
 }
