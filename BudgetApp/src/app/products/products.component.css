@@ -56,6 +56,7 @@ nav{
     width: 40%;
     float:right;
     margin-right: 6%;
+<<<<<<< HEAD
     margin-top: -1180px;
 }
 
@@ -107,3 +108,8 @@ table, .container {
   label{
     color: white;
   }
+=======
+    margin-top:-1200px;
+    padding: 2px;
+}
+>>>>>>> 957a5201c76537991c1ce68712d2e83ed01ae4e4

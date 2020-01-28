@@ -1,14 +1,56 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
 
 <body>
-    <div class="row">
-        
+  
+    <div class="cont">
+        <div class="w3-container">
+            <form (ngSubmit)="sampleForm.reset()" #sampleForm="ngForm" id="form">
+                <div class="card" id="newProduct">
+                    <h3>Add New Product</h3>
+                    <hr>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Product Name:</label>
+                        <input type="text" [(ngModel)]="productDetail.name" class="form-control" name="pname"
+                            placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">SRP(PhP):</label>
+                        <input type="number" [(ngModel)]="productDetail.price" name="prname" class="form-control"
+                            placeholder="Price">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" (click)="addProduct()">{{status}}</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="table-wrapper-scroll-y my-custom-scrollbar" id="tblDiv">
+            <table class="table table-bordered table-striped mb-0">
+                <thead class="table-active">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">SRP(PhP)</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let d of dataModel | filter:searchText">
+                    <td>{{ d.id }}</td>
+                    <td>{{ d.name }}</td>
+                    <td>{{ d.price }}</td>
+                    <td>
+                        <button type="submit" (click)="onEdit(d)" class="btn btn-info">Edit</button>
+                        <button type="submit" (click)="onDelete(d)" class="btn btn-danger">Delete</button>
+                    </td>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
-
-<app-dashboard></app-dashboard>

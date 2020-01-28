@@ -1,0 +1,35 @@
+body{
+    background-image: url('http://nebula.wsimg.com/6da67243727f77312ec04e84528b8b0b?AccessKeyId=9CDC02A6B2D6F90D71BC&disposition=0&alloworigin=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Numans', sans-serif;
+}
+
+#newProduct{
+    width:40%;
+    padding: 20px;
+    margin:20px;
+}
+#form{
+    margin-top:8%;
+}
+
+.cont{
+    padding: 5%;
+}
+
+#tblDiv{
+    float: right;
+    position: relative;
+    top: -350px;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 320px;
+    width: 50%;
+    overflow: auto;
+    }
+.table-wrapper-scroll-y {
+    display: block;
+}
