@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Details } from '../ProductDetails/Details'
-import { element } from 'protractor';
+
 
 @Component({
   selector: 'app-cart',

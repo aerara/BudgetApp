@@ -1,12 +1,13 @@
-
 <body>
     <nav class="navbar fixed-top navbar-light" style="background-color: #a1a15e;">
         <img class="logo" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/currency-peso-1685062-1430911.png">
-        <a id="name"class="navbar-brand" href="#">Budget Buddy</a>
+        <a id="name" class="navbar-brand" href="#">Budget Buddy</a>
     </nav>
-    <label>Search: </label>
-    <input id="search" class="form-control mr-sm-2" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"/>
-
+    <div class="searchDiv">
+        <label>Search: </label>
+        <input id="search" class="form-control mr-sm-2" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" />
+    </div>
+    
     <div class="container">
         <table class="table table-sm">
             <thead>
