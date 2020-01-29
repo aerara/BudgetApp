@@ -6,27 +6,6 @@ body{
 
 }
 
-#templateSection{
-    padding:30px;
-    width:80%;
-    text-align: left;
-    margin: 10%;
-
-  
-}
-
-h1{
-    font-size: 85px;
-    color: rgb(61, 53, 43);
-    text-align: right;
-    font-weight: bold;
-    font-family: 'Libre Baskerville', serif;
-
-}
-
-.w3-container #templateSection{
-    display: inline-block;
-}
 
 .btnStart{
     float: right;
@@ -36,11 +15,19 @@ h1{
     border-radius: 4px;
     cursor: pointer;
     opacity: 70%;
-    margin-right: 15%;
-    margin-top: -5%;
+    margin-right: 21%;
+    margin-top: 1%;
     font-size: 20px;
 
 }
 .btnStart:hover{
     background-color: rgb(188, 201, 139);
+}
+
+
+.logo{
+    width: 550px;
+    height: 200px;
+    margin: 5%; 
+  
 }

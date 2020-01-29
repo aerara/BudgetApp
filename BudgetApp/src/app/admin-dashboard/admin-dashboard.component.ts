@@ -14,44 +14,60 @@ export class AdminDashboardComponent implements OnInit {
   status = 'Submit'
   edit = false
   id: number
+  productData: any = {}
+  dis = true;
+  price:number
 
-  @Input() productDetail = { name: '', price: 0 }
-  constructor(private dataService: UserService, public router: Router) { }
+  @Input() productDetail = { name: '', price: this.price }
+  constructor(private dataService: UserService, public router: Router) {
+  }
 
   ngOnInit() {
     this.loadProduct();
+    if (sessionStorage.getItem("authenticated") == "true") {
+      this.router.navigate(["admin/dashboard"]);
+    } else {
+      this.router.navigate(["admin"]);
+    }
+    this.dataService.getProductById(this.id)
+      .subscribe(data => this.productData = data)
   }
 
-  loadProduct(){
+  loadProduct() {
     return this.dataService.getProduct().subscribe(data => (this.dataModel = data))
   }
 
   addProduct(dataProduct) {
     if (this.edit) {
+
       this.dataModel.forEach(element => {
         if (element.id === this.id) {
           element.name = this.productDetail.name
           element.price = this.productDetail.price
-          console.log(element)
-          this.dataService.updateProduct(element).subscribe(data => this.loadProduct())
+
+          this.dataService.updateProduct(this.id, element).subscribe(data => {
+            this.router.navigate(['admin/dashboard'])
+          })
         }
       });
       this.status = 'Submit'
       this.edit = false
     } else {
-      
+
       this.dataService.addProduct(this.productDetail)
         .subscribe((data: {}) => {
-          console.log('gi add')
           this.router.navigate(['/admin/dashboard'])
+          if(data != null){
+            this.dis = false;
+          } else {
+            this.dis = true;
+          }
         })
     }
   }
 
   onDelete(object: any) {
-    console.log("alksdhfkajdsf")
     this.dataService.deleteProduct(object.id).subscribe(data => this.loadProduct())
-    
   }
 
   onEdit(object: any) {
@@ -62,6 +78,14 @@ export class AdminDashboardComponent implements OnInit {
     console.log(object.name)
     console.log(object.price)
     this.status = 'Save'
+
+  }
+
+
+
+  onLogOut() {
+    sessionStorage.clear()
+    this.router.navigate(["admin"]);
 
   }
 

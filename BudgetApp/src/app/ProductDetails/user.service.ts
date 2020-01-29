@@ -28,8 +28,12 @@ export class UserService {
     return this.http.post<Details[]>(this.apiUrl + '/Product', JSON.stringify(Product), this.httpOptions);
   }
 
-  updateProduct(Product: any): Observable<Details[]> {
-    return this.http.put<Details[]>(this.apiUrl + '/Product', JSON.stringify(Product), this.httpOptions);
+  updateProduct(id,Product): Observable<Details[]> {
+    return this.http.put<Details[]>(this.apiUrl + '/Product/'+id, JSON.stringify(Product), this.httpOptions);
+  }
+
+  getProductById(id): Observable<Details[]> {
+    return this.http.get<Details[]>(this.apiUrl + '/Product/' + id);
   }
 
   deleteProduct(Product: any){

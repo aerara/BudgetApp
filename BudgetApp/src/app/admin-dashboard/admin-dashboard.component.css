@@ -3,20 +3,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Numans', sans-serif;
-}
-
-#newProduct{
-    width:40%;
-    padding: 3%;
-    margin-top:20%;
-    height: 400px;
-}
-#form{
-    margin-top:8%;
-}
-
-.cont{
-    padding: 5%;
+    
 }
 label{
     font-weight: bold;
@@ -25,7 +12,8 @@ label{
 #tblDiv{
     float: right;
     position: relative;
-    top: -400px;
+    top: -390px;
+    right: 30px;
 }
 
 .my-custom-scrollbar {
@@ -38,13 +26,15 @@ label{
     display: block;
 }
 
+
 .btn1 {
-    background-color: rgb(231, 57, 34); /* Blue background */
+    background-color: rgb(179, 82, 69); /* Blue background */
     border: none; /* Remove borders */
     color: white; /* White text */
-    padding: 11px 16px; /* Some padding */
+    padding: 12px 16px; /* Some padding */
     font-size: 16px; /* Set a font size */
     cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 10%;
   }
   
   /* Darker background on mouse-over */
@@ -53,13 +43,14 @@ label{
   }
 
   .btnEdit {
-    background-color: rgb(34, 103, 231); /* Blue background */
+    background-color: rgb(59, 102, 182); /* Blue background */
     border: none; /* Remove borders */
     border-radius: 10%;
     color: white; /* White text */
     padding: 11px 15px; /* Some padding */
     font-size: 16px; /* Set a font size */
     cursor: pointer; /* Mouse pointer on hover */
+
   }
   
   /* Darker background on mouse-over */
@@ -67,13 +58,7 @@ label{
     background-color: rgb(113, 145, 182);
   }
 
-
-  
-nav{
-    padding: 5px;
-}
-
-nave:hover{
+nav:hover{
     background-color: rgb(202, 201, 183);
 }
 
@@ -81,12 +66,66 @@ nave:hover{
     font-size: 40px;
     color: rgb(61, 53, 43);
     margin-right: 1020px;
-    text-align: right;
     font-weight: bold;
     font-family: 'Libre Baskerville', serif;
 }
 
 .logo{
-    width: 70px;
-    height: 70px;
+    width: 280px;
+    height: 120px;
+    float: left;
+    margin-left: 200%; 
+}
+
+.log{
+    margin-left:88%;
+    margin-top: -12%;
+}
+.title{
+    padding: 20px;
+}
+
+img{
+    position: relative;
+    left: -955px;
+}
+
+.btn2{
+    background-color: rgb(156, 112, 81);
+    padding: 12px;
+    color: white;
+    font-size: 13px;
+    border-radius: 30%;
+}
+.thead{
+    background-color: rgb(139, 111, 39);
+}
+.btn2:hover{
+    background-color: rgb(212, 164, 42);
+}
+
+h3{
+    font-size: 30px;
+    text-align: center;
+    background-color: rgb(219, 194, 157);
+    padding: 30px;
+}
+
+
+#form1{
+    padding:10%;
+    width:50%;
+    margin-top: 60px;
+}
+
+.w3-container #templateSection{
+    display: inline-block;
+}
+table{
+    font-size: 16px;
+    border: 2px solid rgb(172, 151, 151);
+}
+table thead{
+    font-weight: bold;
+
 }

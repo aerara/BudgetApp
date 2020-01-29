@@ -1,9 +1,9 @@
 <body>
-    <nav class="navbar fixed-top navbar-light" style="background-color: #fafae9;">
-        <a id="name" class="navbar-brand" href="#"><img class="logo" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/currency-peso-1685062-1430911.png">Budget
-            Buddy</a>
+    <nav class="navbar fixed-top navbar-light" style="background-color: #818166;">
+        <div class="title">
+            <img class="logo" src="https://mybudgetbuddy.app/wp-content/uploads/2018/11/BudgetBuddy_Horizontal_RGB-EDIT.png">
+        </div>
     </nav>
-
     <div class="searchDiv">
         <label>Search: </label>
         <input id="search" class="form-control mr-sm-2" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" />
@@ -12,7 +12,7 @@
     <div class="table-wrapper-scroll-y my-custom-scrollbar " id="tblDiv">
         <table class="table  table-sm-responsive table-bordered table-striped mb-0  " cellspacing="0">
             <thead class="table-active">
-                <tr class="table-warning">
+                <tr class="table-dark">
                     <th scope="col">ID</th>
                     <th scope="col">Product</th>
                     <th scope="col">Quantity</th>
@@ -29,12 +29,13 @@
                         required />
                 </td>
                 <td>{{ d.price }}</td>
-                <td><button type="submit" class="btn btn-success" [disabled]="buttonDisabled" (click)="addCart(d)">Add to Cart</button></td>
+                <td><button type="submit" class="btn btn-success" [disabled]="buttonDisabled" (click)="addCart(d)">Add
+                        to Cart</button></td>
             </tbody>
         </table>
     </div>
 
-    <div class="card" >
+    <div class="card">
         <h3 class="card-header">My Cart</h3>
         <div class="card-body">
             <app-cart [parentdata]='dataToCart'></app-cart>

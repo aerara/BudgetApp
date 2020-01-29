@@ -7,21 +7,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-  public userName="Admin"
-  public userPass="Admin"
-  public userInput : string;
-  public passInput : string;
+  public userName = "Admin"
+  public userPass = "Admin"
+  public userInput: string;
+  public passInput: string;
 
 
-  constructor(private router : Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-  }
-
-  onSubmit(){
-    if(this.passInput === this.userPass && this.userInput === this.userName){
-      console.log("Nakasulod Naka")
-      this.router.navigate(["/admin/dashboard"])
+    if (sessionStorage.getItem("authenticated") == "true") {
+      this.router.navigate(["/admin/dashboard"]);
+    }else{
+      this.router.navigate(["/admin"]);
     }
   }
+
+  onSubmit() {
+    if (this.userInput === this.userName) {
+      if (this.userPass === this.passInput) {
+        this.router.navigate(['admin/dashboard'])
+        sessionStorage.setItem("authenticated", "true");
+        // this.dataService.setLoggedIn(true)
+      } else {
+        alert("Invalid password");
+        sessionStorage.setItem("authenticated", "false");
+      }
+    } else {
+      alert("Account does not exist");
+      sessionStorage.setItem("authenticated", "false");
+    }
+  }
+
 }

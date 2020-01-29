@@ -49,7 +49,6 @@ const appRoutes: Routes= [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     FormsModule, Ng2SearchPipeModule,
-    // PipeTransform
 
   ],
   providers: [UserService],

@@ -1,8 +1,8 @@
 {
   "Product": [
     {
-      "name": "Bear Brand -150g ",
-      "price": 34,
+      "name": "Bear Brand -150gram",
+      "price": 50,
       "id": 1
     },
     {
@@ -81,14 +81,29 @@
       "price": 18
     },
     {
-      "id": 18,
-      "name": "Green Cross (Pure Care) 55g ",
-      "price": 12.5
+      "name": "beer",
+      "price": 60,
+      "id": 20
     },
     {
-      "id": 19,
-      "name": "Silver Swan Special 350ml ",
-      "price": 21.75
+      "name": "test",
+      "price": 23,
+      "id": 21
+    },
+    {
+      "name": "sextoy",
+      "price": 1000,
+      "id": 22
+    },
+    {
+      "name": "test",
+      "price": 22,
+      "id": 25
+    },
+    {
+      "name": "chilla",
+      "price": 150,
+      "id": 30
     }
   ]
 }
