@@ -6,24 +6,23 @@ body{
     
     }
 
-
-    #templateSection{
+#templateSection{
         padding:30px;
         width:60%;
         text-align: right; 
         margin: 1%;
     }
-    
-    h1{
+h1{
         font-size: 80px;
-        color: rgb(61, 53, 43);
+        color: rgb(49, 44, 38);
         text-align: right;
         font-weight: bold;
         font-family: 'Libre Baskerville', serif;
+        margin-top: 15%;
     
     }
     
-    .w3-container #templateSection{
+.w3-container #templateSection{
         display: inline-block;
     }
 
@@ -31,7 +30,7 @@ body{
 height: 100%;
 align-content: center;
 margin-left: 35%;
-margin-top: -32%;
+margin-top: -45%;
 }
 
 .card{

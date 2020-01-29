@@ -20,7 +20,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<Details[]> {
+  getProduct(): Observable<Details[]> {
     return this.http.get<Details[]>(this.apiUrl + '/Product');
   }
 

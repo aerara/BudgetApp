@@ -7,8 +7,9 @@ body{
 
 #newProduct{
     width:40%;
-    padding: 20px;
-    margin:20px;
+    padding: 3%;
+    margin-top:20%;
+    height: 400px;
 }
 #form{
     margin-top:8%;
@@ -17,19 +18,23 @@ body{
 .cont{
     padding: 5%;
 }
+label{
+    font-weight: bold;
+}
 
 #tblDiv{
     float: right;
     position: relative;
-    top: -350px;
+    top: -400px;
 }
 
 .my-custom-scrollbar {
     position: relative;
-    height: 320px;
+    height: 390px;
     width: 50%;
     overflow: auto;
     }
 .table-wrapper-scroll-y {
     display: block;
 }
+

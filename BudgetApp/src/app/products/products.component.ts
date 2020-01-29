@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Details } from '../ProductDetails/Details';
+import { UserService } from '../ProductDetails/user.service';
 
 @Component({
   selector: 'app-products',
@@ -9,7 +10,7 @@ import { Details } from '../ProductDetails/Details';
 })
 
 export class ProductsComponent implements OnInit {
-
+  public dataModel : Details[]=[]
   dataToCart : Array<any>=[];
   qty = '';
   sub:number;
@@ -18,11 +19,12 @@ export class ProductsComponent implements OnInit {
 
   newData: any;
 
-  constructor() {    
+  constructor(private dataService: UserService) {    
     this.newData = new Details;
   }
 
   ngOnInit() {
+    return this.dataService.getProduct().subscribe(data => (this.dataModel = data))
   }
 
   onKey(value: string){
@@ -43,7 +45,7 @@ export class ProductsComponent implements OnInit {
 
     this.newData.qty= parseInt(this.qty);
     this.newData.sub = d.price * parseInt(this.qty);
-    
+  
     this.dataToCart.push(this.newData)
     this.buttonDisabled = true;
     console.log(this.dataToCart);

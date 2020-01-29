@@ -56,60 +56,6 @@ nav{
     width: 40%;
     float:right;
     margin-right: 6%;
-<<<<<<< HEAD
-    margin-top: -1180px;
-}
-
-table, .container {
-    width:70%;
-    margin-left: 2%;
-    /* text-align: center; */
-    /* layout-align: center center; */
-  }
-    
-  table, th, td {
-    border: 1px solid #305A72;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    text-align: center;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    box-sizing: border-box;
-    color: white;
-  }
-
-  th{
-    text-align: center;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    box-sizing: border-box;
-    color: black;
-  }
-  
-  table#t01 tr:nth-child(even) {
-    background-color: #eee;
-  }
-  table#t01 tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  
-  table#t01 th {
-    background-color:#305A72;
-    color: white;
-  }
-
-  button[type=submit]{
-      font-size: 10px;
-  }
-  label{
-    color: white;
-  }
-=======
     margin-top:-1200px;
     padding: 2px;
 }
->>>>>>> 957a5201c76537991c1ce68712d2e83ed01ae4e4

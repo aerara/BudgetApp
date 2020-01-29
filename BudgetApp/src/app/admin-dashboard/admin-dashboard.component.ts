@@ -23,7 +23,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   loadProduct(){
-    return this.dataService.getUsers().subscribe(data => (this.dataModel = data))
+    return this.dataService.getProduct().subscribe(data => (this.dataModel = data))
   }
 
   addProduct(dataProduct) {
