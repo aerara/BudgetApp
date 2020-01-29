@@ -16,6 +16,7 @@ export class ProductsComponent implements OnInit {
   sub:number;
   searchText;
   buttonDisabled = true;
+  showTbl = false;
 
   newData: any;
 
@@ -49,5 +50,6 @@ export class ProductsComponent implements OnInit {
     this.dataToCart.push(this.newData)
     this.buttonDisabled = true;
     console.log(this.dataToCart);
+    this.showTbl = true
   }
 }

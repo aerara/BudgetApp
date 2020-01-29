@@ -6,25 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
         crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cart</title>
 </head>
 
 <body>
-    <div class="container">
-        <h2>My Cart</h2>
-        <table class="table">
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+        <table  class="table table-bordered table-striped mb-0">
             <thead>
                 <tr class="table-warning">
                     <th></th>
-                    <th scope="col">Product</th>
+                    <th scope="col" class="th-lg">Product</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">SRP(PhP)</th>
                     <th scope="col">Subtotal</th>
                 </tr>
             </thead>
             <tbody *ngFor="let d of parentdata">
-                <td scope="col"><button id="del" (click)="remove(d)">X</button></td>
-                <td>{{d.name}}</td>
+                <td scope="col"><button id="del" (click)="remove(d)" class="btn"><i class="fa fa-trash"></i></button></td>
+                <td width="100%">{{d.name}}</td>
                 <td>{{d.qty}}</td>
                 <td>{{d.price}}</td>
                 <td>{{d.sub}}</td>
