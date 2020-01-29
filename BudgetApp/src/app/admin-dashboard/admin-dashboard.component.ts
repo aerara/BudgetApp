@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../ProductDetails/user.service';
 import { Router } from '@angular/router';
 import { Details } from '../ProductDetails/Details';
-
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -15,10 +15,9 @@ export class AdminDashboardComponent implements OnInit {
   edit = false
   id: number
   productData: any = {}
-  dis = true;
-  price:number
+  price: number;
 
-  @Input() productDetail = { name: '', price: this.price }
+  productDetail = { name: '', price: this.price}
   constructor(private dataService: UserService, public router: Router) {
   }
 
@@ -44,33 +43,50 @@ export class AdminDashboardComponent implements OnInit {
         if (element.id === this.id) {
           element.name = this.productDetail.name
           element.price = this.productDetail.price
-
           this.dataService.updateProduct(this.id, element).subscribe(data => {
             this.router.navigate(['admin/dashboard'])
+          })
+          swal.fire({
+            icon: 'success',
+            text: 'Successfully edited',
           })
         }
       });
       this.status = 'Submit'
       this.edit = false
     } else {
-
       this.dataService.addProduct(this.productDetail)
         .subscribe((data: {}) => {
+          console.log(data);
+          
           this.router.navigate(['/admin/dashboard'])
-          if(data != null){
-            this.dis = false;
-          } else {
-            this.dis = true;
-          }
         })
     }
   }
 
   onDelete(object: any) {
-    this.dataService.deleteProduct(object.id).subscribe(data => this.loadProduct())
+    swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+        this.dataService.deleteProduct(object.id).subscribe(data => this.loadProduct())
+      }
+    })
   }
 
   onEdit(object: any) {
+
     this.edit = true
     this.id = object.id
     this.productDetail.name = object.name;
@@ -79,14 +95,13 @@ export class AdminDashboardComponent implements OnInit {
     console.log(object.price)
     this.status = 'Save'
 
+
+
   }
-
-
 
   onLogOut() {
     sessionStorage.clear()
     this.router.navigate(["admin"]);
-
   }
 
 }

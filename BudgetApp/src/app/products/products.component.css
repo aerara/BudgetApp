@@ -30,12 +30,12 @@ input[type=text]{
 }
 
 #search{
-    margin-top: 20%;
+    margin-top: 22%;
     width: 50%;
 }
 
 nav{
-    padding: 5px;
+    padding: 2px;
 }
 
 #name{
@@ -48,8 +48,8 @@ nav{
 }
 
 .logo{
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
 }
 
 .card{
@@ -57,7 +57,7 @@ nav{
     float:right;
     margin-right: 2%;
     padding: 3px;
-    
+    background-color: lavender;
 }
 
 #tblDiv{
@@ -101,3 +101,20 @@ nav:hover{
     padding: 20px;
 }
 
+h3{
+    text-align: center;
+}
+
+.cart {
+    width: 13%;
+    height: 13%;
+}
+
+.hid{
+    background-color: lavender;
+}
+
+.btnCart{
+    background-color: goldenrod;
+    color: white;
+}

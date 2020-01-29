@@ -12,7 +12,7 @@
     <div class="table-wrapper-scroll-y my-custom-scrollbar " id="tblDiv">
         <table class="table  table-sm-responsive table-bordered table-striped mb-0  " cellspacing="0">
             <thead class="table-active">
-                <tr class="table-dark">
+                <tr class="hid">
                     <th scope="col">ID</th>
                     <th scope="col">Product</th>
                     <th scope="col">Quantity</th>
@@ -29,14 +29,14 @@
                         required />
                 </td>
                 <td>{{ d.price }}</td>
-                <td><button type="submit" class="btn btn-success" [disabled]="buttonDisabled" (click)="addCart(d)">Add
+                <td><button type="submit" class="btnCart" [disabled]="buttonDisabled" (click)="addCart(d)">Add
                         to Cart</button></td>
             </tbody>
         </table>
     </div>
 
     <div class="card">
-        <h3 class="card-header">My Cart</h3>
+        <h3 class="card-header"><img class = "cart" src = "https://img.icons8.com/carbon-copy/2x/favorite-cart.png">My Cart</h3>
         <div class="card-body">
             <app-cart [parentdata]='dataToCart'></app-cart>
         </div>

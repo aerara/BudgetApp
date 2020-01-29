@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Details } from '../ProductDetails/Details';
 import { UserService } from '../ProductDetails/user.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-products',
@@ -51,5 +52,9 @@ export class ProductsComponent implements OnInit {
     this.buttonDisabled = true;
     console.log(this.dataToCart);
     this.showTbl = true
+    swal.fire({
+      icon: 'success',
+      text: 'Successfully added to the cart!',
+    })
   }
 }

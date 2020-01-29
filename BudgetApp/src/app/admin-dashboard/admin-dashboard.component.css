@@ -1,6 +1,7 @@
 body{
     background-image: url('http://nebula.wsimg.com/6da67243727f77312ec04e84528b8b0b?AccessKeyId=9CDC02A6B2D6F90D71BC&disposition=0&alloworigin=1');
     background-size: cover;
+    height: auto;
     background-repeat: no-repeat;
     font-family: 'Numans', sans-serif;
     
@@ -25,7 +26,6 @@ label{
 .table-wrapper-scroll-y {
     display: block;
 }
-
 
 .btn1 {
     background-color: rgb(179, 82, 69); /* Blue background */
@@ -71,24 +71,16 @@ nav:hover{
 }
 
 .logo{
-    width: 280px;
-    height: 120px;
+    width: 220px;
+    height: 90px;
     float: left;
-    margin-left: 200%; 
+    margin-left: 10%;
 }
 
-.log{
-    margin-left:88%;
-    margin-top: -12%;
-}
 .title{
-    padding: 20px;
+    padding: 8px;
 }
 
-img{
-    position: relative;
-    left: -955px;
-}
 
 .btn2{
     background-color: rgb(156, 112, 81);
@@ -96,10 +88,10 @@ img{
     color: white;
     font-size: 13px;
     border-radius: 30%;
+    float: right;
+    margin-right: 30%;
 }
-.thead{
-    background-color: rgb(139, 111, 39);
-}
+
 .btn2:hover{
     background-color: rgb(212, 164, 42);
 }
@@ -110,7 +102,10 @@ h3{
     background-color: rgb(219, 194, 157);
     padding: 30px;
 }
-
+.tblhead{
+    background-color: rgb(219, 194, 157);
+    font-weight: bold;
+}
 
 #form1{
     padding:10%;

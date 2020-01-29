@@ -1,14 +1,9 @@
 {
   "Product": [
     {
-      "name": "Bear Brand -150gram",
-      "price": 50,
-      "id": 1
-    },
-    {
       "id": 2,
       "name": "Nescafe (Classic) 25g ",
-      "price": 19.7
+      "price": 19.75
     },
     {
       "id": 3,
@@ -16,14 +11,9 @@
       "price": 19
     },
     {
-      "id": 5,
-      "name": "Green Cross (Pure Care) 55g ",
-      "price": 12.5
-    },
-    {
       "id": 6,
       "name": "Modess w/ Wings",
-      "price": 50
+      "price": 100
     },
     {
       "id": 7,
@@ -91,11 +81,6 @@
       "id": 21
     },
     {
-      "name": "sextoy",
-      "price": 1000,
-      "id": 22
-    },
-    {
       "name": "test",
       "price": 22,
       "id": 25
@@ -104,6 +89,66 @@
       "name": "chilla",
       "price": 150,
       "id": 30
+    },
+    {
+      "name": "test",
+      "id": 31
+    },
+    {
+      "name": "Chilla",
+      "id": 32
+    },
+    {
+      "name": "Bear Brand -150gram",
+      "id": 33
+    },
+    {
+      "name": "Bear Brand -150gram",
+      "id": 34
+    },
+    {
+      "name": "sdwdf",
+      "id": 35
+    },
+    {
+      "name": "sdfdsfg",
+      "id": 36
+    },
+    {
+      "name": "vfgg",
+      "id": 37
+    },
+    {
+      "name": "df",
+      "price": 50,
+      "id": 38
+    },
+    {
+      "name": "asda",
+      "id": 39
+    },
+    {
+      "name": "a",
+      "id": 40
+    },
+    {
+      "name": "test",
+      "id": 41
+    },
+    {
+      "name": "Bear Brand -150gram",
+      "price": 45,
+      "id": 42
+    },
+    {
+      "name": "1",
+      "price": 0,
+      "id": 43
+    },
+    {
+      "name": "Bear Brand -150gram",
+      "price": 123,
+      "id": 44
     }
   ]
 }

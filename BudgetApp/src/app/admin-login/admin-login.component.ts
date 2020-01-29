@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import  Swal from 'sweetalert2';
+
+// const Swal = require('sweetalert2');
 
 @Component({
   selector: 'app-admin-login',
@@ -18,7 +21,7 @@ export class AdminLoginComponent implements OnInit {
   ngOnInit() {
     if (sessionStorage.getItem("authenticated") == "true") {
       this.router.navigate(["/admin/dashboard"]);
-    }else{
+    } else {
       this.router.navigate(["/admin"]);
     }
   }
@@ -29,6 +32,13 @@ export class AdminLoginComponent implements OnInit {
         this.router.navigate(['admin/dashboard'])
         sessionStorage.setItem("authenticated", "true");
         // this.dataService.setLoggedIn(true)
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'You have successfully logged in!',
+          showConfirmButton: false,
+          timer: 1000
+        })
       } else {
         alert("Invalid password");
         sessionStorage.setItem("authenticated", "false");
